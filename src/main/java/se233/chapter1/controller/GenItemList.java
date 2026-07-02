@@ -14,6 +14,7 @@ public class GenItemList {
         itemLists.add(new Weapon("Staff", 30, DamageType.magical, "assets/staff.png"));
         itemLists.add(new Armor("Shirt", 0, 50, "assets/shirt.png"));
         itemLists.add(new Armor("Armor", 50, 0, "assets/armor.png"));
+        itemLists.add(new Weapon("Bow", 15, DamageType.physical, "assets/bow.png"));
         return itemLists;
     }
 }

@@ -72,6 +72,16 @@ public class Launcher extends Application {
     public static void setEquippedArmor(Armor equippedArmor) {
         Launcher.equippedArmor = equippedArmor;
     }
+    public static void unequipAll() {
+        if (equippedWeapon != null) {
+            allEquipments.add(equippedWeapon);
+            equippedWeapon = null;
+        }
+        if (equippedArmor != null) {
+            allEquipments.add(equippedArmor);
+            equippedArmor = null;
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);

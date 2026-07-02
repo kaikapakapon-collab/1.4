@@ -3,6 +3,7 @@ package se233.chapter1.view;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button; // ⭐️ พีชเพิ่ม Import Button ให้แล้ว
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -78,7 +79,13 @@ public class EquipPane extends ScrollPane {
             public void handle(DragEvent e) { onDragDropped(e, armorLbl, armorImgGroup); }
         });
 
-        equipmentInfoPane.getChildren().addAll(weaponLbl, weaponImgGroup, armorLbl, armorImgGroup);
+        Button unequipBtn = new Button("Unequip All");
+        unequipBtn.setOnAction(e -> {
+            Launcher.unequipAll();
+            Launcher.refreshPane();
+        });
+
+        equipmentInfoPane.getChildren().addAll(weaponLbl, weaponImgGroup, armorLbl, armorImgGroup, unequipBtn);
         return equipmentInfoPane;
     }
 

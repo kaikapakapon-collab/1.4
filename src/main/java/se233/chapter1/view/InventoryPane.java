@@ -40,7 +40,7 @@ public class InventoryPane extends ScrollPane {
                 imageViewList[i].setOnDragDone(new EventHandler<DragEvent>() {
                     @Override
                     public void handle(DragEvent event) {
-                        onEquipDone(event);
+                        onDragDone(event);
                     }
                 });
             }
