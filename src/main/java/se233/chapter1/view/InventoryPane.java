@@ -31,6 +31,7 @@ public class InventoryPane extends ScrollPane {
                 imageViewList[i] = new ImageView();
                 imageViewList[i].setImage(new Image(Launcher.class.getResource(
                         equipmentArray.get(i).getImagepath()).toString()));
+                imageViewList[i].setPickOnBounds(true);
                 int finalI = i;
                 imageViewList[i].setOnDragDetected(new EventHandler<MouseEvent>() {
                     public void handle(MouseEvent event) {

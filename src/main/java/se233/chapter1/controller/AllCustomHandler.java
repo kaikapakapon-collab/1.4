@@ -75,6 +75,18 @@ public class AllCustomHandler {
             }
 
             if (canEquip) {
+
+                BasedEquipment itemToRemove = null;
+                for (BasedEquipment item : allEquipments) {
+                    if (item.getName().equals(retrievedEquipment.getName())) {
+                        itemToRemove = item;
+                        break;
+                    }
+                }
+                if (itemToRemove != null) {
+                    allEquipments.remove(itemToRemove);
+                }
+
                 if (retrievedEquipment.getClass().getSimpleName().equals("Weapon")) {
                     if (Launcher.getEquippedWeapon() != null)
                         allEquipments.add(Launcher.getEquippedWeapon());
